@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% block class %}class="sub_page bg-dark text-white"{% endblock class %}
+{% block main %}
+
+<style>
+    .list-group-item-dark {
+        background-color: #2c2f33;
+        border: 1px solid #444;
+        color: #fff;
+    }
+    .cart-image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .cart-qty-input {
+        width: 70px;
+    }
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-white">🛒 Your Cart</h2>
+
+    {% if cart_items %}
+    <ul class="list-group mb-4">
+        {% for item in cart_items %}
+        <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <div class="d-flex align-items-center gap-3">
+                {% if item.product.Image %}
+                    <img src="{{ item.product.Image.url }}" class="cart-image" alt="{{ item.product.Item_name }}">
+                {% else %}
+                    <div class="bg-secondary text-center d-flex align-items-center justify-content-center cart-image">No Image</div>
+                {% endif %}
+                <div>
+                    <h5 class="mb-1">{{ item.product.Item_name }}</h5>
+                    <p class="mb-0">Price: ₹{{ item.product.price }}</p>
+                    <p class="mb-0">Total: ₹{{ item.get_total }}</p>
+                </div>
+            </div>
+            <div class="text-end">
+                <form id="quantity-form-{{ item.id }}" action="{% url 'update_cart' item.id %}" method="POST" class="d-flex align-items-center gap-2 mb-2">
+                    {% csrf_token %}
+                    <input type="hidden" id="quantity-input-{{ item.id }}" name="quantity" value="{{ item.quantity }}">
+                
+                    <button type="button" class="btn btn-outline-light btn-sm" onclick="changeQuantity({{ item.id }}, -1)">−1</button>
+                
+                    <span class="text-white mx-2">Qty: <strong id="quantity-display-{{ item.id }}">{{ item.quantity }}</strong></span>
+                
+                    <button type="button" class="btn btn-outline-light btn-sm" onclick="changeQuantity({{ item.id }}, 1)">+1</button>
+                </form>
+                
+                <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">🗑 Remove</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="bg-secondary text-white rounded p-4 shadow-sm">
+        <h4 class="mb-3">🧾 Total Amount: ₹{{ total_amount }}</h4>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="{% url 'menu' %}" class="btn btn-outline-light">➕ Add More Items</a>
+            <a href="{% url 'payment' %}" class="btn btn-success">💳 Proceed to Payment</a>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="alert alert-info bg-dark text-white border-light mt-4">
+        <p>Your cart is currently empty.</p>
+        <a href="{% url 'menu' %}" class="btn btn-outline-light mt-2">Browse Menu</a>
+    </div>
+    {% endif %}
+</div>
+<script>
+    function changeQuantity(itemId, change) {
+        const input = document.getElementById(`quantity-input-${itemId}`);
+        const display = document.getElementById(`quantity-display-${itemId}`);
+
+        if (!input || !display) return;
+
+        let currentQty = parseInt(input.value);
+        let newQty = currentQty + change;
+
+        if (newQty < 1) {
+            newQty = 1;  // prevent going below 1
+        }
+
+        input.value = newQty;
+        display.innerText = newQty;
+
+        // Submit the form after updating
+        document.getElementById(`quantity-form-${itemId}`).submit();
+    }
+</script>
+
+{% endblock main %}

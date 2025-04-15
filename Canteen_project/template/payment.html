@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% block class %}class="sub_page"{% endblock class %}
+{% block main %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg p-4">
+        <h3 class="text-center mb-4">🛒 Order Summary</h3>
+
+        {% if cart_items %}
+          <table class="table table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart_items %}
+              <tr>
+                <td>{{ item.product.Item_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>₹{{ item.product.price }}</td>
+                <td>₹{{ item.get_total }}</td>
+              </tr>
+              {% endfor %}
+              <tr class="table-info">
+                <td colspan="3" class="text-end"><strong>Total Amount:</strong></td>
+                <td><strong>₹{{ total_amount }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="text-center mt-4">
+            <button id="rzp-button" class="btn btn-success px-4 py-2 fs-5 shadow-sm">💳 Pay with Razorpay</button>
+          </div>
+
+          <!-- Hidden form to handle success -->
+          <form action="{% url 'payment_success' %}" method="POST" id="payment-success-form">
+            {% csrf_token %}
+            <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+            <input type="hidden" name="razorpay_order_id" id="razorpay_order_id" value="{{ razorpay_order_id }}">
+            <input type="hidden" name="razorpay_signature" id="razorpay_signature">
+          </form>
+
+        {% else %}
+          <p class="text-center">Your cart is empty. <a href="{% url 'menu' %}">Go back to menu.</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Razorpay JS Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  var options = {
+    "key": "{{ razorpay_key_id }}",
+    "amount": "{{ total_amount|add:'0' }}00", // in paisa
+    "currency": "INR",
+    "name": "Canteen Checkout",
+    "description": "Secure Payment for your Food Order",
+    "order_id": "{{ razorpay_order_id }}",
+    "handler": function (response){
+      document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+      document.getElementById('razorpay_signature').value = response.razorpay_signature;
+      document.getElementById('payment-success-form').submit();
+    },
+    "theme": {
+      "color": "#28a745"
+    }
+  };
+
+  var rzp1 = new Razorpay(options);
+  document.getElementById('rzp-button').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+  }
+</script>
+
+{% endblock %}

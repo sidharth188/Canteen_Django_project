@@ -1,0 +1,21 @@
+<!-- payment_list.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block class %}class="sub_page"{% endblock class %}
+{% block main %}
+<table>
+    <tr>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Created At</th>
+    </tr>
+    {% for payment in payments %}
+    <tr>
+        <td>{{ payment.user.username }}</td>
+        <td>{{ payment.amount }}</td>
+        <td>{{ payment.payment_status }}</td>
+        <td>{{ payment.created_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
