@@ -61,7 +61,7 @@ This project is open-source and free to use under the MIT License.
 ## 🖼️ Screenshots
 
 ### 🏠 Home Page
-![Home Page](Screenshot (30).png)
+![Home Page](Screenshot%20(32).png)
 
 ### ℹ️ About Page
 ![About Page](relative/path/to/Screenshot%20(32).png)
