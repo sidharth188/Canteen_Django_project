@@ -60,44 +60,47 @@ This project is open-source and free to use under the MIT License.
 
 ## 🖼️ Screenshots
 
+### 🍽️ Login Page
+![Menu Page](Screenshot%20(42).png)
+
+### 🍽️ Register Page
+![Menu Page](Screenshot%20(43).png)
+
 ### 🏠 Home Page
-![Home Page](Screenshot%20(32).png)
+![Home Page](Screenshot%20(30).png)
 
 ### ℹ️ About Page
-![About Page](relative/path/to/Screenshot%20(32).png)
-
-### 📅 Empty Cart Page
-![Booking Page](relative/path/to/Screenshot%20(35).png)
-
-### 🍽️ Cart Page
-![Menu Page](relative/path/to/Screenshot%20(37).png)
-
-### 🍽️ Menu Page
-![Menu Page](relative/path/to/Screenshot%20(31).png)
+![About Page](Screenshot%20(32).png)
 
 ### 🍽️ Feedback Page
-![Menu Page](relative/path/to/Screenshot%20(33).png)
+![Menu Page](Screenshot%20(33).png)
 
 ### 🍽️ Feedback View Page
-![Menu Page](relative/path/to/Screenshot%20(34).png)
+![Menu Page](Screenshot%20(34).png)
+
+### 🍽️ Menu Page
+![Menu Page](Screenshot%20(31).png)
+
+### 📅 Empty Cart Page
+![Booking Page](Screenshot%20(35).png)
 
 ### 🍽️ added to cart Page
-![Menu Page](relative/path/to/Screenshot%20(36).png)
+![Menu Page](Screenshot%20(36).png)
+
+### 🍽️ Cart Page
+![Menu Page](Screenshot%20(37).png)
 
 ### 🍽️ Payment view Page
-![Menu Page](relative/path/to/Screenshot%20(38).png)
+![Menu Page](Screenshot%20(38).png)
 
 ### 🍽️ Payment Page
-![Menu Page](relative/path/to/Screenshot%20(39).png)
+![Menu Page](Screenshot%20(39).png)
 
 ### 🍽️ Adminlogin Page
-![Menu Page](relative/path/to/Screenshot%20(40).png)
+![Menu Page](Screenshot%20(40).png)
 
 ### 🍽️ Admin View Page
-![Menu Page](relative/path/to/Screenshot%20(41).png)
-
-### 🍽️ Login Page
-![Menu Page](relative/path/to/Screenshot%20(42).png)
+![Menu Page](Screenshot%20(41).png)
 
 ### 🍽️ aboutus Page
-![Menu Page](relative/path/to/Screenshot%20(43).png)
+![Menu Page](Screenshot%20(43).png)
