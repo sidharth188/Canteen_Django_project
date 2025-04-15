@@ -58,6 +58,46 @@ This project is open-source and free to use under the MIT License.
 
 ---
 
-Feel free to update the "Features" or add screenshots for better presentation.
+## 🖼️ Screenshots
 
-Would you like me to generate this `README.md` file and include it in your folder so you can directly upload to GitHub? &#8203;:contentReference[oaicite:0]{index=0}&#8203;
+### 🏠 Home Page
+![Home Page](relative/path/to/Screenshot%20(30).png)
+
+### ℹ️ About Page
+![About Page](relative/path/to/Screenshot%20(32).png)
+
+### 📅 Empty Cart Page
+![Booking Page](relative/path/to/Screenshot%20(35).png)
+
+### 🍽️ Cart Page
+![Menu Page](relative/path/to/Screenshot%20(37).png)
+
+### 🍽️ Menu Page
+![Menu Page](relative/path/to/Screenshot%20(31).png)
+
+### 🍽️ Feedback Page
+![Menu Page](relative/path/to/Screenshot%20(33).png)
+
+### 🍽️ Feedback View Page
+![Menu Page](relative/path/to/Screenshot%20(34).png)
+
+### 🍽️ added to cart Page
+![Menu Page](relative/path/to/Screenshot%20(36).png)
+
+### 🍽️ Payment view Page
+![Menu Page](relative/path/to/Screenshot%20(38).png)
+
+### 🍽️ Payment Page
+![Menu Page](relative/path/to/Screenshot%20(39).png)
+
+### 🍽️ Adminlogin Page
+![Menu Page](relative/path/to/Screenshot%20(40).png)
+
+### 🍽️ Admin View Page
+![Menu Page](relative/path/to/Screenshot%20(41).png)
+
+### 🍽️ Login Page
+![Menu Page](relative/path/to/Screenshot%20(42).png)
+
+### 🍽️ aboutus Page
+![Menu Page](relative/path/to/Screenshot%20(43).png)
