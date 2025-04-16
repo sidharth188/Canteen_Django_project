@@ -3,7 +3,7 @@
 This is a Django-based web application designed to manage and streamline operations for a canteen. It includes features for booking, menu browsing, and administrative control.
 
 ## 📹 Demo Video
-[Watch Here](https://drive.google.com/file/d/YOUR_FILE_ID/view)
+[Watch Here]([https://drive.google.com/file/d/YOUR_FILE_ID/view](https://drive.google.com/file/d/1U4x5CE_LJjgB5AWu2NiUA363nTwKnank/view?usp=drive_link))
 
 ## 🚀 Features
 
